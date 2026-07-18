@@ -1,0 +1,6 @@
+timestamp,hostname,event_id,level,user,source_ip,message
+2026-07-10T10:15:32Z,WIN-SERVER01,4624,Information,administrator,192.168.1.100,Successful logon
+2026-07-10T10:18:11Z,WIN-SERVER01,4625,Warning,guest,192.168.1.150,Failed logon
+2026-07-10T10:20:45Z,WEB-SERVER01,1001,Error,www-data,10.0.0.25,Application crashed
+2026-07-10T10:23:12Z,LINUX-SERVER01,22,Information,root,172.16.1.55,SSH login accepted
+2026-07-10T10:25:41Z,WEB-SERVER01,403,Warning,anonymous,203.0.113.10,Forbidden HTTP request

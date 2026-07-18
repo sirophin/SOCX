@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-base-600;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    font-feature-settings: 'ss01' 1;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display text-ink-100;
+  }
+
+  /* Visible keyboard focus everywhere — no focus outlines suppressed. */
+  :focus-visible {
+    outline: 2px solid theme('colors.accent.500');
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background-color: theme('colors.accent.600');
+    color: white;
+  }
+
+  /* Thin, quiet scrollbars — dense data tables shouldn't fight for attention. */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: theme('colors.base.500');
+    border-radius: 8px;
+    border: 2px solid theme('colors.base.900');
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .table-cell-mono {
+    @apply font-mono text-[13px] text-ink-300;
+  }
+}

@@ -1,0 +1,35 @@
+import { Outlet, useLocation } from 'react-router-dom'
+import Sidebar from './Sidebar'
+import Topbar from './Topbar'
+
+export default function AppShell() {
+  const location = useLocation()
+
+  const titles = {
+    '/': 'Dashboard',
+    '/dashboard': 'Dashboard',
+    '/upload': 'Upload Logs',
+    '/investigation': 'Investigation',
+    '/alerts': 'Alerts',
+    '/rules': 'Detection Rules',
+    '/users': 'Users',
+    '/settings': 'Settings',
+    '/datasets': 'Sample Datasets',
+  }
+
+  const title = titles[location.pathname] || 'SOCX'
+
+  return (
+    <div className="flex h-screen bg-base-900">
+      <Sidebar />
+
+      <div className="flex min-w-0 flex-1 flex-col">
+        <Topbar title={title} />
+
+        <main className="flex-1 overflow-y-auto p-6">
+          <Outlet />
+        </main>
+      </div>
+    </div>
+  )
+}
